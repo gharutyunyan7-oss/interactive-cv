@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Gayane Harutyunyan — Interactive Research Desk</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0ea5e9;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        sidebar {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+        sidebar h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .nav-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        main {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            min-height: 500px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .card h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+        .card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        ul.pub-list {
+            padding-left: 1.2rem;
+        }
+        ul.pub-list li {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dr. Gayane Harutyunyan</h1>
+    <p>Associate Professor of Economics & Interdisciplinary Researcher | Interactive Professional Desk</p>
+</header>
+
+<div class="container">
+    <sidebar>
+        <h3>Workspace Navigation</h3>
+        <button class="nav-btn active" onclick="switchSection('profile')">Professional Profile</button>
+        <button class="nav-btn" onclick="switchSection('research')">Research & Publications</button>
+        <button class="nav-btn" onclick="switchSection('methods')">Methods & Tools</button>
+        <button class="nav-btn" onclick="switchSection('positions')">Academic & Positions</button>
+        <button class="nav-btn" onclick="switchSection('awards')">Honours & Fellowships</button>
+    </sidebar>
+
+    <main>
+        <!-- PROFILE SECTION -->
+        <div id="profile" class="section active">
+            <h2>Professional Profile</h2>
+            <p>Interdisciplinary economist and legal scholar with a Ph.D. in Finance & Insurance and dual law degrees from Yerevan State University (both with Honors). Specializing in AI policy, digital financial infrastructure, banking system efficiency, and international education reform.</p>
+            
+            <h3>Core Research Focus</h3>
+            <div>
+                <span class="badge">AI in Public Policy & Education</span>
+                <span class="badge">Digital Financial Infrastructure</span>
+                <span class="badge">Economic Regulation</span>
+                <span class="badge">Banking Supervision & SupTech</span>
+                <span class="badge">ESG & Green Finance</span>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">Contact & Identifiers</h3>
+            <p><strong>Email:</strong> g.harutyunyan7@gmail.com<br>
+               <strong>Phone:</strong> +374 93 37 93 72<br>
+               <strong>Location:</strong> Yerevan, Armenia<br>
+               <strong>ORCID:</strong> 0000-0003-0874-4517</p>
+        </div>
+
+        <!-- RESEARCH SECTION -->
+        <div id="research" class="section">
+            <h2>Research & Publications</h2>
+            <p>Author of over 30 publications and 4 textbooks. Active empirical work spans hand-collected bank-level panels for Armenia, Georgia, and Azerbaijan (76 banks, 2014–2025).</p>
+            
+            <h3>Textbooks & Manuals</h3>
+            <ul class="pub-list">
+                <li>Harutyunyan, G. Yu. "Monetary and Macro Prudential Policy." Textbook, Meknark Publishing House, 2024.</li>
+                <li>Harutyunyan, G. Yu. & Atanyan, A. "Applied Skills of Risk Management." Educational Manual, 2021.</li>
+                <li>Harutyunyan, G. Yu. "International Banking System." Educational Manual, 2020.</li>
+            </ul>
+
+            <h3>Selected International & Scopus-Indexed Work</h3>
+            <ul class="pub-list">
+                <li>Harutyunyan, G. Yu., “Enhancing banking supervision in Armenia: The 5-zone diagnostic matrix approach”, <em>Central European Economic Journal (CEEJ)</em>, accepted (2026).</li>
+                <li>Harutyunyan, G. Yu., Mardoyan, A. & Atanyan, A. A. "Central Bank Digital Currency (CBDC): Challenges and Perspectives." Springer Series: Studies in Computational Intelligence, 2026.</li>
+                <li>Harutyunyan, G. Yu., “A dynamic 4S-DSDM framework for banking supervision”, <em>Computational Economics (Springer)</em>, under review (2026).</li>
+            </ul>
+        </div>
+
+        <!-- METHODS & TOOLS SECTION -->
+        <div id="methods" class="section">
+            <h2>Methods & Analytical Tools</h2>
+            <p>Advanced toolkit combining econometrics, machine learning algorithms, and explainable AI models for supervisory analytics.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <h4>Machine Learning Clustering</h4>
+                    <p>K-Means, Fuzzy C-Means (FCM), and DBSCAN for pattern recognition and regime shifts.</p>
+                </div>
+                <div class="card">
+                    <h4>Predictive Modeling</h4>
+                    <p>Random Forest algorithms and Explainable AI (SHAP) for supervisory early warning systems.</p>
+                </div>
+                <div class="card">
+                    <h4>Advanced Econometrics</h4>
+                    <p>Panel Econometrics (FE/RE, Driscoll–Kraay), OLS / HAC Regression, DuPont & EVA Analysis.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- POSITIONS SECTION -->
+        <div id="positions" class="section">
+            <h2>Academic & Professional Positions</h2>
+            <ul class="pub-list">
+                <li><strong>Data Analyst (Intern):</strong> Bluestock FinTech Inc. (2026 – Present)</li>
+                <li><strong>Editorial Board Member:</strong> International Journal of Economics, Finance & Management Sciences (USA) (2024 – Present)</li>
+                <li><strong>Associate Professor:</strong> Dept. of Financial Markets & Institutions, Armenian State University of Economics (ASUE) (2021 – Present)</li>
+                <li><strong>Ph.D. Assistant:</strong> Dept. of Banking & Insurance, ASUE (2016 – 2021)</li>
+                <li><strong>Insurance Accountant:</strong> Rosgosstrakh Armenia | Prime Insurance Brokers (2011 – 2013)</li>
+            </ul>
+        </div>
+
+        <!-- AWARDS SECTION -->
+        <div id="awards" class="section">
+            <h2>Honours & International Fellowships</h2>
+            <ul class="pub-list">
+                <li><strong>British Council Researcher Connect Certificate</strong> (2025)</li>
+                <li><strong>Best Researcher CIS Award</strong> – Kazakhstan International Center (2024)</li>
+                <li><strong>Japan Foundation Research Fellowship</strong> – Tohoku University, Sendai, Japan (2022)</li>
+                <li><strong>Central Bank of Armenia — Isaak Isaakyan Competition Award</strong> (2009)</li>
+                <li><strong>Rosgosstrakh Armenia Academic Scholarship</strong> (2009–2011)</li>
+            </ul>
+        </div>
+    </main>
+</div>
+
+<script>
+    function switchSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Remove active class from buttons
+        const buttons = document.querySelectorAll('.nav-btn');
+        buttons.forEach(b => b.classList.remove('active'));
+
+        // Show target section and highlight button
+        document.getElementById(sectionId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
